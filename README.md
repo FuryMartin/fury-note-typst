@@ -1,7 +1,7 @@
 # simple-typst-note
 
 ## Example
-![](./assets/example.png)
+![](./assets/example.svg)
 
 ## Usage 
 
