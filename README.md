@@ -1,8 +1,5 @@
 # simple-typst-note
 
-## Example
-![](./assets/example.svg)
-
 ## Usage 
 
 ```rust
@@ -36,3 +33,5 @@
 ## Advices
 
 - VSCode + [tynymist-typst](https://marketplace.visualstudio.com/items?itemName=myriad-dreamin.tinymist) is recommended for writing typst notes.
+
+![](./assets/example.svg)
