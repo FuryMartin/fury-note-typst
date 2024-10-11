@@ -1,0 +1,1 @@
+# simple-typst-note
