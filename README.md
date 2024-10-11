@@ -10,15 +10,15 @@
 
 #let title = "Hello, World!"
 #let author = (
-  name: "Example",
+  name: "John Doe",
   email: "test@email.com"
 )
-#let bib-path = "./refer.bib"
+#let bib = bibliography("refer.bib")
 
 #show: note.with(
   title: [#title],
   author: author,
-  bib-path:bib-path,
+  bib:bib,
   lang: "zh", 
   toc: false,
 )

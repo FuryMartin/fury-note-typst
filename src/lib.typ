@@ -9,7 +9,7 @@
   // The thesis papersize. Default is A4. Affects margins.
   papersize: "a4",
   // The result of a call to the `bibliography` function or none
-  bib-path: none,
+  bib: none,
   // The language of the document. Default is "de".
   lang: "zh",
   //The appendix
@@ -92,11 +92,9 @@
 
   body
 
-  if bib-path != none {
+  if bib != none {
     set text(lang: "en")
-    bibliography(
-      bib-path
-    )
+    bib
   }
 
   // Appendix
