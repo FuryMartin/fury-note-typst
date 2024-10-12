@@ -3,7 +3,7 @@
   title: [],
   // An array of authors. For each author, you can specify a name, 
   // department, organization, location and email. Everything but the name is optional.
-  author: (),
+  author: (name: "", email: ""),
   //Your thesis abstract. Can be omitted if you dont have one.
   abstract: none,
   // The thesis papersize. Default is A4. Affects margins.
@@ -28,7 +28,14 @@
   set text(font: main-font, size: 12pt, lang: lang)
 
   set heading(numbering: "1.1")
-  set par(justify: true, leading: 0.52em)
+
+  show heading: it => [
+    #block(it)
+    #v(0.4em)
+  ]
+
+  set par(justify: true, leading: 0.8em)
+  show par: set block(spacing: 1.5em)
 
   set page(
     paper: papersize,
@@ -37,10 +44,12 @@
 
   align(center, text(20pt)[*#title*])
 
-  align(center)[
-    #author.name \
-    #link("mailto:" + author.email) \ 
-  ]
+  if author.name != "" and author.email != "" {
+    align(center)[
+      #author.name \
+      #link("mailto:" + author.email) \ 
+    ]
+  }
 
   set math.mat(delim: "[")
   set math.vec(delim: "[")
