@@ -1,0 +1,25 @@
+{
+	"Fury Note Snippet": {
+        "prefix": "furynote",
+        "body": [
+            "#import \"@local/fury-note:0.1.0\": *",
+            "",
+            "#let title = \"$1\"",
+            "#let author = (",
+            "  name: \"$2\",",
+            "  email: \"$3\"",
+            ")",
+            "#let bib = bibliography(\"$4\")",
+            "",
+            "#show: note.with(",
+            "  title: [#title],",
+            "  author: author,",
+            "  bib: bib,",
+            "  lang: \"zh\",",
+            "  toc: false,",
+            ")",
+			""
+        ],
+        "description": "Insert a Fury note template."
+    }
+}
