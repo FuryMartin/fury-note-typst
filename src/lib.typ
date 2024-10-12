@@ -22,13 +22,10 @@
   body
 ) = {
 
+  set document(title: title, author: author.name)
+  
   let main-font = ("Times New Roman", "Family Song")
   set text(font: main-font, size: 12pt, lang: lang)
-
-  set document(
-    title: title,
-    author: author.name
-  )
 
   set heading(numbering: "1.1")
   set par(justify: true, leading: 0.52em)
@@ -46,7 +43,9 @@
   ]
 
   set math.mat(delim: "[")
-  set math.equation(numbering: "(1.1)")
+  set math.vec(delim: "[")
+  set math.equation(numbering: "(1)")
+
   show link: set text(fill: blue, style: "italic", weight: "bold")
 
   // Configure citations and bibliography style
