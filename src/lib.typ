@@ -17,7 +17,7 @@
   // The TOC
   toc: true,
   // two column layout
-  two-column: false,
+  column: 1,
   // The document's body
   body
 ) = {
@@ -95,10 +95,8 @@
     }
   }
 
-  if two-column == true {
-    show: rest => columns(2, rest)
-  }
-
+  show: rest => columns(column, rest)
+  
   body
 
   if bib != none {
