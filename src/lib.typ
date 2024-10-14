@@ -50,7 +50,8 @@
       #link("mailto:" + author.email) \ 
     ]
   }
-
+  
+  set list(indent: 1.2em)
   set math.mat(delim: "[")
   set math.vec(delim: "[")
   set math.equation(numbering: "(1)")
