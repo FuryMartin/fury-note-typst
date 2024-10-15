@@ -32,6 +32,7 @@
 
 ## Advices
 
-- VSCode + [tynymist-typst](https://marketplace.visualstudio.com/items?itemName=myriad-dreamin.tinymist) is recommended for writing typst notes.
+- Edit with VSCode + [tynymist-typst](https://marketplace.visualstudio.com/items?itemName=myriad-dreamin.tinymist) is recommended for writing typst notes.
+- Convert to docx using [Pandoc](https://pandoc.org/) with `pandoc main.typ -o main.docx --reference-doc template.docx`
 
 ![](./assets/example.svg)
