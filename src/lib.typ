@@ -42,7 +42,7 @@
     numbering: "1"
   )
 
-  align(center, text(20pt)[*#title*])
+  align(center, text(20pt)[*#title\ *])
 
   if author.name != "" and author.email != "" {
     align(center)[
@@ -54,6 +54,7 @@
   set list(indent: 1.2em)
   set math.mat(delim: "[")
   set math.vec(delim: "[")
+  
   set math.equation(numbering: "(1)")
 
   show link: set text(fill: blue, style: "italic", weight: "bold")
@@ -96,7 +97,7 @@
   }
 
   show: rest => columns(column, rest)
-  
+
   body
 
   if bib != none {
@@ -135,12 +136,13 @@
     if vertical != none {
       v(vertical)
     }
-    figure(
-      box(
-        align(left,doc),
-        stroke: 0.7pt , 
-        fill: rgb("#eee"), 
-        outset: 5pt, 
-        radius: 7pt, 
-        width: 95%))
+    block(
+      align(left,doc),
+      stroke: 0.7pt , 
+      fill: rgb("#eee"), 
+      outset: 5pt, 
+      radius: 5pt, 
+      width: 95%,
+      breakable: true
+    )
   }
