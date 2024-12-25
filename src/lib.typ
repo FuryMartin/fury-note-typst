@@ -42,7 +42,7 @@
     #v(0.4em)
   ]
 
-  set par(justify: true, leading: 0.8em, spacing: 1.5em)
+  set par(justify: true, leading: 1em, spacing: 1em)
 
   set page(
     paper: papersize,
