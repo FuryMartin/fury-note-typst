@@ -2,7 +2,7 @@
   // The Thesis Title
   title: [],
   // Author information, dictionary type
-  author: (name: "", email: "", department: "", affiliation: ""),
+  author: (name: none, email: none, department: none, affiliation: none),
   //Your thesis abstract. Can be omitted if you dont have one.
   abstract: none,
   // The thesis papersize. Default is A4. Affects margins.
@@ -23,16 +23,20 @@
   body
 ) = {
 
-  let author-name = if "name" in author { author.name } else { none }
-  let author-email = if "email" in author { author.email } else { none }
-  let author-department = if "department" in author { author.department } else { none }
-  let author-affiliation = if "affiliation" in author { author.affiliation } else { none }
+  let author-info = (
+    name: author.at("name", default: none),
+    email: author.at("email", default: none), 
+    department: author.at("department", default: none),
+    affiliation: author.at("affiliation", default: none)
+  )
 
-  set document(title: title, author: author-name)
+  set document(
+    title: title,
+    author: if author-info.name != none {author-info.name} else { "Unknown" }
+  )
   
-  let main-font = ("Times New Roman", "Family Song"）
-  # if using Mac OS, replace "Kaiti" with "Kaiti SC"
-  let italic-font = ("Times New Roman",  "Kaiti")
+  let main-font = ("Times New Roman", "Family Song")
+  let italic-font = ("Times New Roman",  "Kaiti SC", "Kaiti")
   set text(font: main-font, size: 12pt, lang: lang)
 
   set heading(numbering: "1.1")
@@ -43,6 +47,7 @@
   ]
 
   set par(justify: true, leading: 1em, spacing: 1em)
+  // show par: set par(spacing: 1.5em)
 
   set page(
     paper: papersize,
@@ -52,15 +57,15 @@
   align(center, text(20pt)[*#title *])
 
 
-  if author-name != none {
+  if author-info.name != none {
     align(center)[
-      #author-name
+      #if author-info.name != none [#author-info.name]
     ]
     set text(font: italic-font, size: 12pt, lang: lang)
     align(center)[
-      #if author-department != none [#author-department \ ]
-      #if author-affiliation != none [#author-affiliation \ ]
-      #if author-email != none [#link("mailto:" + author-email) \ ]
+      #if author-info.department != none [#author-info.department \ ]
+      #if author-info.affiliation != none [#author-info.affiliation \ ]
+      #if author-info.email != none [#link("mailto:" + author-info.email) \ ]
     ]
   }
   
